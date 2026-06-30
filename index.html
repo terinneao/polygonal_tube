@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Polygonal Tube Section Properties Calculator & Bending Stress Analyzer</title>
-  <meta name="description" content="Calculate cross-sectional area, moments of inertia, elastic & plastic section moduli, torsional constants, and combined bending-axial-torsional utilization for hexagonal, octagonal, and other polygonal tubes.">
+  <meta name="description"
+    content="Calculate cross-sectional area, moments of inertia, elastic & plastic section moduli, torsional constants, and combined bending-axial-torsional utilization for hexagonal, octagonal, and other polygonal tubes.">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- App Header -->
@@ -15,7 +18,7 @@
     <div class="logo-container">
       <div class="logo-icon">&#x2B22;</div>
       <div class="logo-text">
-        <h1>POLYTUBE PRO</h1>
+        <h1>POLYGONAL TUBE </h1>
         <p>Section Properties & Bending Stress Analyzer</p>
       </div>
     </div>
@@ -23,7 +26,8 @@
       <button class="icon-btn" id="theme-toggle" title="Toggle Light/Dark Theme">
         <span class="material-icons">light_mode</span>
       </button>
-      <button class="primary-btn" id="unit-toggle" style="background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main);">
+      <button class="primary-btn" id="unit-toggle"
+        style="background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main);">
         Unit System: Metric
       </button>
       <button class="primary-btn" id="print-btn" title="Export PDF Engineering Report">
@@ -34,16 +38,16 @@
 
   <!-- Main Container -->
   <div class="app-container">
-    
+
     <!-- Left Sidebar Input Panel -->
     <aside class="sidebar">
-      
+
       <!-- Section 1: Shape definition -->
       <div class="input-section">
         <div class="input-section-title">
           <span class="material-icons">category</span> Cross Section Shape
         </div>
-        
+
         <!-- Number of sides -->
         <div class="form-group slider-container">
           <label>Number of Sides <span class="slider-value" id="sides-val">8</span></label>
@@ -63,8 +67,10 @@
         <div class="form-group">
           <label>Dimension Standard</label>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.25rem;">
-            <button class="chip active" id="input-mode-flat" style="padding: 0.4rem; font-size: 0.75rem;">Flat-to-Flat Width</button>
-            <button class="chip" id="input-mode-corner" style="padding: 0.4rem; font-size: 0.75rem;">Corner-to-Corner</button>
+            <button class="chip active" id="input-mode-flat" style="padding: 0.4rem; font-size: 0.75rem;">Flat-to-Flat
+              Width</button>
+            <button class="chip" id="input-mode-corner"
+              style="padding: 0.4rem; font-size: 0.75rem;">Corner-to-Corner</button>
           </div>
         </div>
 
@@ -89,7 +95,7 @@
         <div class="input-section-title">
           <span class="material-icons">layers</span> Material & Length
         </div>
-        
+
         <!-- Length -->
         <div class="form-group">
           <label>Total Tube Length <span class="unit" id="len-unit">m</span></label>
@@ -140,7 +146,7 @@
         <div class="input-section-title">
           <span class="material-icons">bolt</span> Design Bending Loads
         </div>
-        
+
         <!-- Bending Moment (Mx) -->
         <div class="form-group">
           <label>Bending Moment (M<sub>x</sub>) <span class="unit" id="moment-unit">kN·m</span></label>
@@ -164,7 +170,7 @@
 
     <!-- Main Output and Visualizer Area -->
     <main class="main-content">
-      
+
       <!-- Tab Controls -->
       <nav class="tabs-nav">
         <button class="tab-btn active" id="tab-visualizer">
@@ -183,11 +189,11 @@
 
       <!-- Tab Content Area -->
       <div class="tab-content-wrapper">
-        
+
         <!-- Tab 1: Visualizer Panel -->
         <div class="tab-panel active" id="panel-visualizer">
           <div class="visualizer-layout">
-            
+
             <!-- 2D Section Card -->
             <div class="visualizer-card">
               <div class="visualizer-card-header">
@@ -195,8 +201,10 @@
                   <span class="material-icons" style="color: var(--primary);">filter_tilt_shift</span> 2D Cross Section
                 </div>
                 <div class="visualizer-controls">
-                  <button class="chip active" id="stress-toggle-elastic" style="padding: 0.25rem 0.5rem; font-size: 0.7rem;">Elastic Stress</button>
-                  <button class="chip" id="stress-toggle-plastic" style="padding: 0.25rem 0.5rem; font-size: 0.7rem;">Plastic Stress</button>
+                  <button class="chip active" id="stress-toggle-elastic"
+                    style="padding: 0.25rem 0.5rem; font-size: 0.7rem;">Elastic Stress</button>
+                  <button class="chip" id="stress-toggle-plastic"
+                    style="padding: 0.25rem 0.5rem; font-size: 0.7rem;">Plastic Stress</button>
                 </div>
               </div>
               <div class="visualizer-canvas-container" id="svg-container">
@@ -224,7 +232,10 @@
           <div class="info-alert">
             <span class="material-icons info-alert-icon">info</span>
             <div>
-              <strong>Design Insight:</strong> Polygonal tubes are highly efficient structural members. Due to their multiple axes of symmetry, their moment of inertia is isotropic (identical in both horizontal and vertical bending plane), giving uniform bending resistance regardless of orientation. However, the outermost fiber distance and combined yielding capacity varies between flat-to-flat and corner-to-corner bending.
+              <strong>Design Insight:</strong> Polygonal tubes are highly efficient structural members. Due to their
+              multiple axes of symmetry, their moment of inertia is isotropic (identical in both horizontal and vertical
+              bending plane), giving uniform bending resistance regardless of orientation. However, the outermost fiber
+              distance and combined yielding capacity varies between flat-to-flat and corner-to-corner bending.
             </div>
           </div>
         </div>
@@ -232,7 +243,7 @@
         <!-- Tab 2: Properties Dashboard -->
         <div class="tab-panel" id="panel-properties">
           <div class="properties-grid">
-            
+
             <!-- Area -->
             <div class="property-card">
               <div class="property-meta">
@@ -240,7 +251,8 @@
                 <span class="property-symbol">A</span>
               </div>
               <div class="property-val-display" id="val-area">—</div>
-              <div class="property-desc">Total solid area of the polygonal tube walls. Used for axial capacity calculations.</div>
+              <div class="property-desc">Total solid area of the polygonal tube walls. Used for axial capacity
+                calculations.</div>
             </div>
 
             <!-- Weight per length -->
@@ -250,7 +262,8 @@
                 <span class="property-symbol">w</span>
               </div>
               <div class="property-val-display" id="val-weight-len">—</div>
-              <div class="property-desc">Self-weight per unit length of the tube based on selected material density.</div>
+              <div class="property-desc">Self-weight per unit length of the tube based on selected material density.
+              </div>
             </div>
 
             <!-- Moment of Inertia X -->
@@ -260,7 +273,8 @@
                 <span class="property-symbol">I<sub>x</sub></span>
               </div>
               <div class="property-val-display" id="val-ix">—</div>
-              <div class="property-desc">Second moment of area resisting bending about the horizontal bending axis.</div>
+              <div class="property-desc">Second moment of area resisting bending about the horizontal bending axis.
+              </div>
             </div>
 
             <!-- Moment of Inertia Y -->
@@ -280,7 +294,8 @@
                 <span class="property-symbol">J</span>
               </div>
               <div class="property-val-display" id="val-j">—</div>
-              <div class="property-desc">Geometric capacity to resist rotational twisting (J = I<sub>x</sub> + I<sub>y</sub>).</div>
+              <div class="property-desc">Geometric capacity to resist rotational twisting (J = I<sub>x</sub> +
+                I<sub>y</sub>).</div>
             </div>
 
             <!-- Radius of Gyration X -->
@@ -290,7 +305,8 @@
                 <span class="property-symbol">k<sub>x</sub></span>
               </div>
               <div class="property-val-display" id="val-kx">—</div>
-              <div class="property-desc">Distance from bending axis at which area could be concentrated to have equal moment of inertia.</div>
+              <div class="property-desc">Distance from bending axis at which area could be concentrated to have equal
+                moment of inertia.</div>
             </div>
 
             <!-- Radius of Gyration Y -->
@@ -310,7 +326,8 @@
                 <span class="property-symbol">y<sub>max</sub></span>
               </div>
               <div class="property-val-display" id="val-ymax">—</div>
-              <div class="property-desc">Distance from neutral axis to the outermost fiber parallel to bending plane.</div>
+              <div class="property-desc">Distance from neutral axis to the outermost fiber parallel to bending plane.
+              </div>
             </div>
 
             <!-- Elastic Section Modulus -->
@@ -320,7 +337,8 @@
                 <span class="property-symbol">S<sub>x</sub></span>
               </div>
               <div class="property-val-display" id="val-s">—</div>
-              <div class="property-desc">Elastic bending capacity indicator (S<sub>x</sub> = I<sub>x</sub> / y<sub>max</sub>). Governs first yield.</div>
+              <div class="property-desc">Elastic bending capacity indicator (S<sub>x</sub> = I<sub>x</sub> /
+                y<sub>max</sub>). Governs first yield.</div>
             </div>
 
             <!-- Plastic Section Modulus -->
@@ -330,7 +348,8 @@
                 <span class="property-symbol">Z<sub>x</sub></span>
               </div>
               <div class="property-val-display" id="val-z">—</div>
-              <div class="property-desc">Plastic bending capacity indicator (Z<sub>x</sub> = 2 &middot; first moment of half-area). Governs ultimate limit.</div>
+              <div class="property-desc">Plastic bending capacity indicator (Z<sub>x</sub> = 2 &middot; first moment of
+                half-area). Governs ultimate limit.</div>
             </div>
 
             <!-- Torsional Constant -->
@@ -340,7 +359,8 @@
                 <span class="property-symbol">J<sub>t</sub></span>
               </div>
               <div class="property-val-display" id="val-jt">—</div>
-              <div class="property-desc">Torsional constant for thin-walled closed tubes using Bredt's double-shear flow model.</div>
+              <div class="property-desc">Torsional constant for thin-walled closed tubes using Bredt's double-shear flow
+                model.</div>
             </div>
 
             <!-- Torsional Section Modulus -->
@@ -360,7 +380,8 @@
                 <span class="property-symbol">P<sub>o</sub></span>
               </div>
               <div class="property-val-display" id="val-po">—</div>
-              <div class="property-desc">External perimeter length. Used for paint area, wind resistance, and boundary calculations.</div>
+              <div class="property-desc">External perimeter length. Used for paint area, wind resistance, and boundary
+                calculations.</div>
             </div>
 
             <!-- Inner Perimeter -->
@@ -380,7 +401,8 @@
                 <span class="property-symbol">W</span>
               </div>
               <div class="property-val-display" id="val-weight-total">—</div>
-              <div class="property-desc">Total weight of the hollow polygonal tube based on entered length and material density.</div>
+              <div class="property-desc">Total weight of the hollow polygonal tube based on entered length and material
+                density.</div>
             </div>
 
             <!-- Volume -->
@@ -399,14 +421,15 @@
         <!-- Tab 3: Design Bending & combined stress check -->
         <div class="tab-panel" id="panel-design">
           <div class="design-dashboard">
-            
+
             <!-- Card 1: Combined stresses (Von Mises) -->
             <div class="design-card">
               <h3>Von Mises Yielding Check</h3>
               <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-                Axial, Bending, and Torsion combine to form a multi-axial stress field. Evaluated against the material yield limit using the <strong>Von Mises Yield Criterion</strong>.
+                Axial, Bending, and Torsion combine to form a multi-axial stress field. Evaluated against the material
+                yield limit using the <strong>Von Mises Yield Criterion</strong>.
               </p>
-              
+
               <div class="stress-breakdown">
                 <div class="stress-row">
                   <span>Peak Bending Stress (&sigma;<sub>b</sub> = M / S<sub>x</sub>)</span>
@@ -426,7 +449,8 @@
                 </div>
                 <div class="stress-row">
                   <span>Material Yield Limit (F<sub>y</sub>)</span>
-                  <span class="val" id="val-yield-check" style="font-family: var(--font-sans); font-weight: 500;">—</span>
+                  <span class="val" id="val-yield-check"
+                    style="font-family: var(--font-sans); font-weight: 500;">—</span>
                 </div>
                 <div class="stress-row">
                   <span>Bending Safety Factor (Elastic)</span>
@@ -460,9 +484,10 @@
             <div class="design-card">
               <h3>ASCE 48 Code Buckling Analysis</h3>
               <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-                Evaluates local buckling of cold-formed flat plates. The allowable bending limit is reduced to <strong>F<sub>cr</sub></strong> if elements are non-compact or slender.
+                Evaluates local buckling of cold-formed flat plates. The allowable bending limit is reduced to
+                <strong>F<sub>cr</sub></strong> if elements are non-compact or slender.
               </p>
-              
+
               <div class="stress-breakdown">
                 <div class="stress-row">
                   <span>Clear Flat Width (w)</span>
@@ -486,7 +511,8 @@
                 </div>
                 <div class="stress-row">
                   <span>ASCE Buckling Classification</span>
-                  <span class="val" id="asce-regime-val" style="font-family: var(--font-sans); font-weight: 600;">—</span>
+                  <span class="val" id="asce-regime-val"
+                    style="font-family: var(--font-sans); font-weight: 600;">—</span>
                 </div>
                 <div class="stress-row">
                   <span>ASCE 48 Combined Code Margin</span>
@@ -530,9 +556,11 @@
 
   <!-- Footer -->
   <footer>
-    <p>POLYTUBE PRO &copy; 2026. Made for structural engineers and designers. Formulas integrated via Green's Theorem & Sutherland-Hodgman Polygon Clipping.</p>
+    <p>POLYTUBE PRO &copy; 2026. Made for structural engineers and designers. Formulas integrated via Green's Theorem &
+      Sutherland-Hodgman Polygon Clipping.</p>
   </footer>
 
   <script src="app.js"></script>
 </body>
+
 </html>
